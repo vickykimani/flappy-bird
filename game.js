@@ -14,6 +14,12 @@ const BIRD_HEIGHT = 30;
 const PIPE_WIDTH = 50;
 const PIPE_GAP = 125;
 
+// bird variables
+let birdX = 50;
+let birdY = 50;
+let birdVelocity = 0;
+let birdAccelartion = 0.1;
+
 // pipe variables
 let pipeX = 400;
 let pipeY = canvas.height - 200;
@@ -22,6 +28,12 @@ let pipeY = canvas.height - 200;
 let scoreDiv = document.getElementById('score-display');
 let score = 0;
 let highscore = 0;
+
+document.body.onkeyup = function(e) {
+    if (e.code == 'Space') {
+        birdVelocity = FLAP_SPEED;
+    }
+}
 
 function increaseScore() {
     // TODO:
@@ -51,5 +63,16 @@ function endGame() {
 }
 
 function loop() {
-    // TODO:
+    // reset the ctx after every loop iteration
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // draw flappy bird
+    ctx.drawImage(flappyImg, birdX, birdY);
+
+    // draw pipes
+    // ctx.fillStyle = '#333';
+
+    requestAnimationFrame(loop);
 }
+
+loop();

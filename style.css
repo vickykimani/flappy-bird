@@ -17,6 +17,10 @@ canvas {
     z-index: 1;
 }
 
+.backdrop-blur {
+    filter: blur(5px);
+}
+
 #end-menu {
     /* toggle the display of end-menu instead */
     display: none;

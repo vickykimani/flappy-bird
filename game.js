@@ -17,3 +17,8 @@ const PIPE_GAP = 125;
 // pipe variables
 let pipeX = 400;
 let pipeY = canvas.height - 200;
+
+// score and highscore variables
+let scoreDiv = document.getElementById('score-display');
+let score = 0;
+let highscore = 0;

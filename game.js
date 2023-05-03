@@ -101,7 +101,7 @@ function resetGame() {
 }
 
 function endGame() {
-    // TODO:
+    showEndMenu();
 }
 
 function loop() {

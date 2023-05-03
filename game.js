@@ -71,6 +71,17 @@ function loop() {
 
     // draw pipes
     ctx.fillStyle = '#333';
+    ctx.fillRect(pipeX, -100, PIPE_WIDTH, pipeY);
+    ctx.fillRect(pipeX, pipeY + PIPE_GAP, PIPE_WIDTH, canvas.height - pipeY);
+
+    // move pipes
+    pipeX -= 1.5;
+
+    // reset pipes
+    if (pipeX < -50) {
+        pipeX = 400;
+        pipeY = Math.random() * (canvas.height - PIPE_GAP) + PIPE_WIDTH;
+    }
 
     // apply gravity to the bird + make it move
     birdVelocity += birdAccelartion;

@@ -1,6 +1,6 @@
 body {
     background-color: #73c8a9;
-    font-family: 'Press Start 2P' cursive;
+    font-family: 'Press Start 2P', cursive;
     background-image: linear-gradient(to right, #73c8a9, #373b44);
 }
 
@@ -23,4 +23,10 @@ canvas {
     width: 200px;
     padding: 20px;
     text-align: center;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 50%);
 }

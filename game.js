@@ -13,3 +13,7 @@ const BIRD_WIDTH = 40;
 const BIRD_HEIGHT = 30;
 const PIPE_WIDTH = 50;
 const PIPE_GAP = 125;
+
+// pipe variables
+let pipeX = 400;
+let pipeY = canvas.height - 200;

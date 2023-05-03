@@ -27,7 +27,7 @@ let pipeY = canvas.height - 200;
 // score and highscore variables
 let scoreDiv = document.getElementById('score-display');
 let score = 0;
-let highscore = 0;
+let highScore = 0;
 
 document.body.onkeyup = function(e) {
     if (e.code == 'Space') {
@@ -94,6 +94,12 @@ function showEndMenu() {
     document.getElementById('end-menu').style.display = 'block';
     gameContainer.classList.add('backdrop-blur');
     document.getElementById('end-score').innerHTML = score;
+
+    // update high score at end of game
+    if (highScore < score) {
+        highScore = score;
+    }
+    document.getElementById('best-score').innerHTML = highScore;
 }
 
 function resetGame() {

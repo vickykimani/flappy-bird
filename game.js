@@ -70,7 +70,11 @@ function loop() {
     ctx.drawImage(flappyImg, birdX, birdY);
 
     // draw pipes
-    // ctx.fillStyle = '#333';
+    ctx.fillStyle = '#333';
+
+    // apply gravity to the bird + make it move
+    birdVelocity += birdAccelartion;
+    birdY += birdVelocity;
 
     requestAnimationFrame(loop);
 }

@@ -40,7 +40,49 @@ function increaseScore() {
 }
 
 function collisionCheck() {
-    // TODO:
+    // create bounding boxes for the bird & the pipes
+    const birdBox = {
+        x: birdX,
+        y: birdY,
+        width: BIRD_WIDTH,
+        height: BIRD_HEIGHT
+    }
+
+    const topPipeBox = {
+        x: pipeX,
+        y: pipeY - PIPE_GAP + BIRD_HEIGHT,
+        width: PIPE_WIDTH,
+        height: pipeY
+    }
+
+    const bottomPipeBox = {
+        x: pipeX,
+        y: pipeY + PIPE_GAP + BIRD_HEIGHT,
+        width: PIPE_WIDTH,
+        height: canvas.height - pipeY - PIPE_GAP
+    }
+
+    // check for collision (upper pipe box)
+    if (birdBox.x + birdBox.width > topPipeBox.x &&
+        birdBox.x < topPipeBox.x + topPipeBox.width &&
+        birdBox.y < topPipeBox.y) {
+        return true;
+    }
+
+    // check for collision (lower pipe box)
+    if (birdBox.x + birdBox.width > bottomPipeBox.x &&
+        birdBox.x < bottomPipeBox.x + bottomPipeBox.width &&
+        birdBox.y + birdBox.height > bottomPipeBox.y) {
+        return true;
+    }
+
+    // check if bird hits boundaries
+    if (birdY < 0 || birdY + BIRD_HEIGHT > canvas.height) {
+        return true;
+    }
+
+    return false;
+
 }
 
 function hideEndMenu() {
@@ -73,6 +115,12 @@ function loop() {
     ctx.fillStyle = '#333';
     ctx.fillRect(pipeX, -100, PIPE_WIDTH, pipeY);
     ctx.fillRect(pipeX, pipeY + PIPE_GAP, PIPE_WIDTH, canvas.height - pipeY);
+
+    // collision check to end game and display end menu
+    if (collisionCheck()) {
+        endGame();
+        return;
+    }
 
     // move pipes
     pipeX -= 1.5;

@@ -22,3 +22,34 @@ let pipeY = canvas.height - 200;
 let scoreDiv = document.getElementById('score-display');
 let score = 0;
 let highscore = 0;
+
+function increaseScore() {
+    // TODO:
+}
+
+function collisionCheck() {
+    // TODO:
+}
+
+function hideEndMenu() {
+    document.getElementById('end-menu').style.display = 'none';
+    gameContainer.classList.remove('backdrop-blur');
+}
+
+function showEndMenu() {
+    document.getElementById('end-menu').style.display = 'block';
+    gameContainer.classList.add('backdrop-blur');
+    document.getElementById('end-score').innerHTML = score;
+}
+
+function resetGame() {
+    // TODO:
+}
+
+function endGame() {
+    // TODO:
+}
+
+function loop() {
+    // TODO:
+}

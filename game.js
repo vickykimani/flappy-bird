@@ -29,11 +29,19 @@ let scoreDiv = document.getElementById('score-display');
 let score = 0;
 let highScore = 0;
 
+// control bird with space key
 document.body.onkeyup = function(e) {
     if (e.code == 'Space') {
         birdVelocity = FLAP_SPEED;
     }
 }
+
+// restart game using restart button
+document.getElementById('restart-button').addEventListener('click', function() {
+    hideEndMenu();
+    resetGame();
+    loop();
+})
 
 function increaseScore() {
     // TODO:

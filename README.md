@@ -4,7 +4,7 @@ This is a web- based game inspired by the popular Flappy Bird game. The objectiv
 
 ## Getting Started
 
-To run the game, simply click [here](#).
+To run the game, simply click [here](https://vickykimani.github.io/flappy-bird/).
 
 ## How to Play
 

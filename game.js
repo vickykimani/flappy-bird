@@ -29,6 +29,9 @@ let scoreDiv = document.getElementById('score-display');
 let score = 0;
 let highScore = 0;
 
+// bool variable to increase the score
+let scored = false;
+
 // control bird with space key
 document.body.onkeyup = function(e) {
     if (e.code == 'Space') {
@@ -45,9 +48,15 @@ document.getElementById('restart-button').addEventListener('click', function() {
 
 // increase score
 function increaseScore() {
-    if (birdX > pipeX + PIPE_WIDTH && (birdY < pipeY + PIPE_GAP || birdY + BIRD_HEIGHT > pipeY + PIPE_GAP)) {
+    if (birdX > pipeX + PIPE_WIDTH && (birdY < pipeY + PIPE_GAP || birdY + BIRD_HEIGHT > pipeY + PIPE_GAP) && !scored) {
         score++;
         scoreDiv.innerHTML = score;
+        scored = true;
+    }
+
+    // reset the flag if bird passes the pipes
+    if (birdX < pipeX + PIPE_WIDTH) {
+        scored = false;
     }
 }
 
@@ -164,6 +173,7 @@ function loop() {
     birdVelocity += birdAccelartion;
     birdY += birdVelocity;
 
+    // call functions
     increaseScore();
     requestAnimationFrame(loop);
 }

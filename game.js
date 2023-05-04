@@ -43,8 +43,12 @@ document.getElementById('restart-button').addEventListener('click', function() {
     loop();
 })
 
+// increase score
 function increaseScore() {
-    // TODO:
+    if (birdX > pipeX + PIPE_WIDTH && (birdY < pipeY + PIPE_GAP || birdY + BIRD_HEIGHT > pipeY + PIPE_GAP)) {
+        score++;
+        scoreDiv.innerHTML = score;
+    }
 }
 
 function collisionCheck() {
@@ -160,6 +164,7 @@ function loop() {
     birdVelocity += birdAccelartion;
     birdY += birdVelocity;
 
+    increaseScore();
     requestAnimationFrame(loop);
 }
 

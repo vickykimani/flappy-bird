@@ -110,8 +110,19 @@ function showEndMenu() {
     document.getElementById('best-score').innerHTML = highScore;
 }
 
+// reset the values so we can start with the bird at the beginning
 function resetGame() {
-    // TODO:
+    // bird variables
+    birdX = 50;
+    birdY = 50;
+    birdVelocity = 0;
+    birdAccelartion = 0.1;
+
+    // pipe variables
+    pipeX = 400;
+    pipeY = canvas.height - 200;
+
+    score = 0;
 }
 
 function endGame() {

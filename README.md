@@ -10,7 +10,7 @@ To run the game, simply click [here](https://vickykimani.github.io/flappy-bird/)
 
 1. Press the spacebar to make the bird flap its wings and gain altitude.
 2. Avoid colliding with the pipes.
-3. Ech successful passage through a set of pipes will award the player one point.
+3. Each successful passage through a set of pipes will award the player one point.
 4. The game will end if the player collides with a pipe or hits the ground.
 
 ## Credits

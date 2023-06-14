@@ -1,6 +1,6 @@
 # Flappy Bird
 
-This is a web- based game inspired by the popular Flappy Bird game. The objective of the game is to navigate a bird through a series of pipes without colliding with them.
+This is a web-based game inspired by the popular Flappy Bird game. The objective of the game is to navigate a bird through a series of pipes without colliding with them.
 
 ## Getting Started
 
